@@ -1,0 +1,22 @@
+**Content Provided:**
+{{.Content}}
+
+-----------
+
+**Task:** Identify the correspondent of a given document for paperless-ngx.
+**Instructions:**
+1. The content language is {{.Language}}.
+2. Document title: "{{.Title}}" (in {{.Language}}).
+3. Correspondents are likely found in address fields or titles/headers at the start of the document, for example besides the address and are likely 2-6 words long and should never contain line-breaks (e.g. \n).
+4. They are a natural or un-natural Person, like a GmbH, Ltd. or so forth. Match companies (non-natural) first.
+5. If the OCR-ed content is scrambled, attempt to make sentences sensible by replacing words, but keep the first 256 characters intact. Provide an original and a possible description version.
+6. Search both versions and come up with a document-type that makes the most sense
+7. Search both versions for common company names (e.g., GmbH, AG, Ltd.) or person names as potential correspondents and list them.
+8. Existing correspondents are: {{.AvailableCorrespondents | join ", "}}.
+9. Match found correnspondents against existing ones (only >70% probability), replace them but dont change the order.
+10. Blacklisted correspondents are: {{.BlackList | join ", "}}.
+11. Remove any matches (even partial) of the blacklisted correspondents from your list.
+12. Ensure the correspondent is a natural or non-natural person/company; if not, use placeholder-text thats 256 words long.
+13. Do not randomly select an existing correspondent, but clean the matched correspondent for duplicate-whitespaces and line-breaks. If a line-break was found remove everything after the first match.
+14. If no matches: simply give a placeholder-text thats 256 words long.
+15. Final response: just the identified correspondent or placeholder, no kind of reasoning given.

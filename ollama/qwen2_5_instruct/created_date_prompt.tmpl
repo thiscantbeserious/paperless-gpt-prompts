@@ -1,0 +1,19 @@
+**Content Provided:**
+{{.Content}}
+
+-----------
+
+**Task:** Your task is to find the date of a document for paperless-ngx.
+**Instructions:**
+1. The content is likely in {{.Language}}.
+2. The title is: {{.Title}}
+3. Today's date: {{.Today}}
+4. Scan the content and the title for the date
+5. The date can be in any international format and might need to be converted.
+6. The answer/output format should be strictly converted to: YYYY-MM-DD.
+7. If you find just a year, use that and fill the month and day with 01-01.
+8. If you find a year and month, use that and fill the day with 01.
+9. If you find a year, month, and day, then use that.
+10. If you find a different format than YYYY-MM-DD, convert it without telling me.
+11. If you find no date, or the date cannot be converted against YYYY-MM-DD just give me todays date back.
+12. Final response: just the identified date, no kind of reasoning given.
