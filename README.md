@@ -1,0 +1,1 @@
+# paperless-gpt-prompts
